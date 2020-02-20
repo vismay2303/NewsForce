@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:showIn="navigation_view">
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/nav_TopNews"
+            android:title="@string/menu_top_news"
+            android:icon="@drawable/ic_news"
+            />
+        <item
+            android:id="@+id/nav_SuggestedForYou"
+            android:title="@string/menu_suggested"
+            android:icon="@drawable/ic_conversation"/>
+        <item
+            android:id="@+id/nav_today_top"
+            android:title="@string/todaystop"
+            android:icon="@drawable/ic_today_black_24dp"/>
+    </group>
+    <item android:title="@string/heading_menu_topicwise">
+        <menu>
+            <item
+                android:id="@+id/nav_Entertainment"
+                android:title="@string/menu_entertainment"
+                android:icon="@drawable/ic_ondemand_video_black_24dp"/>
+            <item
+                android:id="@+id/nav_Technology"
+                android:title="@string/menu_technology"
+                android:icon="@drawable/ic_sceince"/>
+            <item
+                android:id="@+id/nav_WorldNews"
+                android:title="@string/menu_worldnews"
+                android:icon="@drawable/ic_planet"/>
+            <item
+                android:id="@+id/nav_Sports"
+                android:title="@string/menu_sports"
+                android:icon="@drawable/ic_cricket_bat"/>
+            <item
+                android:id="@+id/nav_Country"
+                android:title="@string/menu_country"
+                android:icon="@drawable/ic_flag_black_24dp"/>
+            <item
+                android:id="@+id/nav_MoneyFinance"
+                android:title="@string/menu_money"
+                android:icon="@drawable/ic_monetization_on_black_24dp"/>
+            <item
+                android:id="@+id/nav_Business"
+                android:title="@string/menu_business"
+                android:icon="@drawable/ic_business_black_24dp"/>
+        </menu>
+    </item>
+    <item android:title="Top Sources">
+        <menu>
+            <item
+                android:id="@+id/sources_BBC"
+                android:title="BBC News"
+                android:icon="@drawable/ic_papirus_team_papirus_apps_bbc"/>
+            <item
+                android:id="@+id/sources_TheHindu"
+                android:title="The Hindu"/>
+            <item
+                android:id="@+id/sources_CNBC"
+                android:title="CNBC" />
+            <item
+                android:id="@+id/sources_CNN"
+                android:title="CNN" />
+            <item
+                android:id="@+id/sources_FourFOurTwo"
+                android:title="FourFourTwo" />
+            <item
+                android:id="@+id/sources_FoxNews"
+                android:title="Fox News" />
+            <item
+                android:id="@+id/sources_Independent"
+                android:title="Independent" />
+        </menu>
+    </item>
+    <item android:title="Others">
+        <menu>
+            <item
+                android:id="@+id/nav_Settings"
+                android:icon="@drawable/ic_settings_black_24dp"
+                android:title="Settings"
+                android:iconTint="@color/lightblue"/>
+            <item
+                android:id="@+id/nav_about_app"
+                android:title="About the App"
+                android:icon="@drawable/ic_info_black_24dp"
+                />
+            <item
+                android:id="@+id/nav_help_and_feedback"
+                android:title="Help and Feedback"
+                android:icon="@drawable/ic_help_black_24dp"/>
+            <item
+                android:id="@+id/nav_logout"
+                android:title="Sign Out"
+                android:icon="@drawable/ic_exit_to_app_black_24dp"/>
+        </menu>
+    </item>
+
+</menu>

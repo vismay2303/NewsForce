@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "909940100465",
+    "firebase_url": "https://newsforce-716fb.firebaseio.com",
+    "project_id": "newsforce-716fb",
+    "storage_bucket": "newsforce-716fb.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:909940100465:android:add57ed8f031aa133d7ad0",
+        "android_client_info": {
+          "package_name": "com.android.vismay.newsforce"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "909940100465-eiag17t8hd8nm5hka0qr7hqsmq5cpbbs.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.android.vismay.newsforce",
+            "certificate_hash": "82f1450d11a0d22720dd0b23064943379347eca5"
+          }
+        },
+        {
+          "client_id": "909940100465-rseg3ohqmhdnt6sloqgapqlnc5orp1el.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBQCSD0GGjTEgY805hMUX1EUWVotPIZ2_4"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "909940100465-jian2s4doev5ejj9h9kasqgtvfsuhpe0.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

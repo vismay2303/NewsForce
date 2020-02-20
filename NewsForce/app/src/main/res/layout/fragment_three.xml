@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".LoginAndSignup.InitialScreens"
+    android:background="@color/lightblue">
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:gravity="center_horizontal"
+        android:orientation="vertical">
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/circle_background"
+            android:layout_gravity="center_horizontal"
+            android:scaleType="centerCrop"
+            android:layout_marginBottom="50dp"
+            android:layout_marginRight="50dp"
+            android:layout_marginLeft="50dp"
+            android:layout_marginTop="50dp"
+            android:src="@drawable/ic_live_news"
+            android:padding="30dp"
+            android:maxHeight="300dp"
+            android:maxWidth="300dp"
+            />
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColor="@android:color/white"
+            android:textSize="28sp"
+            android:text="Faster Than Ever."
+            android:layout_marginBottom="30dp"
+            android:textAlignment="center"/>
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginBottom="50dp"
+            android:text="Keeping you more aware than the rest in a short and precise manner."
+            android:textAlignment="center"
+            android:textColor="@android:color/white"
+            android:textSize="22sp"/>
+    </LinearLayout>
+</RelativeLayout>
