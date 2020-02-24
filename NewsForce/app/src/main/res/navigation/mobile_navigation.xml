@@ -7,37 +7,23 @@
 
     <fragment
         android:id="@+id/nav_home"
-        android:name="com.android.vismay.newsforce.Home.ui.home.HomeFragment"
+        android:name="com.android.vismay.newsforce.Home.HomeFragment"
         android:label="@string/menu_home"
         tools:layout="@layout/fragment_home" />
 
     <fragment
-        android:id="@+id/nav_gallery"
-        android:name="com.android.vismay.newsforce.Home.ui.gallery.GalleryFragment"
-        android:label="@string/menu_gallery"
-        tools:layout="@layout/fragment_gallery" />
-
+        android:id="@+id/nav_about_app"
+        android:name="com.android.vismay.newsforce.Home.OthersFragments.AboutFragment"
+        android:label="About the App"
+        tools:layout="@layout/fragment_about"/>
     <fragment
-        android:id="@+id/nav_slideshow"
-        android:name="com.android.vismay.newsforce.Home.ui.slideshow.SlideshowFragment"
-        android:label="@string/menu_slideshow"
-        tools:layout="@layout/fragment_slideshow" />
-
+        android:id="@+id/nav_settings"
+        android:name="com.android.vismay.newsforce.Home.OthersFragments.SettingsFragment"
+        android:label="Settings"
+        tools:layout="@layout/fragment_settings"/>
     <fragment
-        android:id="@+id/nav_tools"
-        android:name="com.android.vismay.newsforce.Home.ui.tools.ToolsFragment"
-        android:label="@string/menu_tools"
-        tools:layout="@layout/fragment_tools" />
-
-    <fragment
-        android:id="@+id/nav_share"
-        android:name="com.android.vismay.newsforce.Home.ui.share.ShareFragment"
-        android:label="@string/menu_share"
-        tools:layout="@layout/fragment_share" />
-
-    <fragment
-        android:id="@+id/nav_send"
-        android:name="com.android.vismay.newsforce.Home.ui.send.SendFragment"
-        android:label="@string/menu_send"
-        tools:layout="@layout/fragment_send" />
+        android:id="@+id/nav_help_and_feedback"
+        android:name="com.android.vismay.newsforce.Home.OthersFragments.HelpFeedbackFragment"
+        android:label="Help and Feedback"
+        tools:layout="@layout/fragment_help_feedback"/>
 </navigation>
