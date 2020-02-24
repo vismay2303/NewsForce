@@ -5,10 +5,57 @@
     android:layout_height="match_parent"
     tools:context=".Home.OthersFragments.AboutFragment">
 
-    <TextView
+    <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="@string/hello_blank_fragment"
-        android:textSize="110sp"/>
+        android:layout_height="match_parent">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            tools:context=".AboutTheApp.AboutActivity"
+            android:background="@android:color/white"
+            android:orientation="vertical"
+            android:padding="5dp">
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="16dp"
+                android:layout_marginRight="16dp"
+                android:text="Disclaimer:"
+                android:textColor="@android:color/black"
+                android:textSize="22sp"
+                />
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:layout_marginLeft="16dp"
+                android:layout_marginRight="16dp"
+                android:text="Our application is for general informational purposes only. All information on the application is provided in good faith, however we make no representation or warranty of any kind, express or implied, regarding the accuracy, adequacy, validity, reliability, availability or completeness of any information on our application. It may contain links to other websites or content belonging to or originating from third parties or links to websites and features in banners or other advertising. Such external links are not investigated, monitored, or checked by us.\n"
+                android:textColor="@android:color/black"
+                android:textSize="18sp"
+                />
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="16dp"
+                android:layout_marginRight="16dp"
+                android:text="About the App:"
+                android:textColor="@android:color/black"
+                android:textSize="22sp"
+                />
+            <TextView
+                android:layout_margin="10dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="16dp"
+                android:layout_marginLeft="16dp"
+                android:textColor="@android:color/black"
+                android:textSize="20sp"
+                android:textAlignment="viewStart"
+                android:justificationMode="inter_word"
+                android:text="> The Times of India live news app offers everything that an avid news reader is looking for – breaking news, latest headlines, trending stories and in-depth coverage of sports, cricket, entertainment, business, technology, politics &amp; more! \n\n> From India news to world news, politics to cricket news, technology news to Bollywood news and movie reviews of Bollywood, Hollywood and regional films – get the most relevant coverage of celebrity news.\n\n> The app can set up a daily briefing to give you the most important stories of the day, or you can tap Full Coverage to get everything.\n"
+                />
+        </LinearLayout>
+    </ScrollView>
 
 </FrameLayout>
