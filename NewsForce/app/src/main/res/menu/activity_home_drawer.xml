@@ -64,7 +64,7 @@
                 android:id="@+id/sources_CNN"
                 android:title="CNN" />
             <item
-                android:id="@+id/sources_FourFOurTwo"
+                android:id="@+id/sources_FourFourTwo"
                 android:title="FourFourTwo" />
             <item
                 android:id="@+id/sources_FoxNews"
