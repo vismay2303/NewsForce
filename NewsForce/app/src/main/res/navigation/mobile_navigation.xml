@@ -10,9 +10,89 @@
         android:name="com.android.vismay.newsforce.Home.HomeFragment"
         android:label="@string/menu_home"
         tools:layout="@layout/fragment_home" />
-
-    
-
+    <fragment
+        android:id="@+id/nav_today_top"
+        android:name="com.android.vismay.newsforce.Home.TodayTopFragment"
+        android:label="Today's News"
+        tools:layout="@layout/fragment_today_top" />
+    <fragment
+        android:id="@+id/nav_suggested_for_you"
+        android:name="com.android.vismay.newsforce.Home.SuggestedForYouFragment"
+        android:label="Suggested For You"
+        tools:layout="@layout/fragment_suggested_for_you" />
+    <!--TopSourcesFragments-->
+    <fragment
+        android:id="@+id/sources_BBC"
+        android:name="com.android.vismay.newsforce.Home.TopSourcesFragments.BBCNewsFragment"
+        android:label="BBC News"
+        tools:layout="@layout/fragment_bbcnews"/>
+    <fragment
+        android:id="@+id/sources_CNBC"
+        android:name="com.android.vismay.newsforce.Home.TopSourcesFragments.CNBCFragment"
+        android:label="CNBC News"
+        tools:layout="@layout/fragment_cnbc"/>
+    <fragment
+        android:id="@+id/sources_CNN"
+        android:name="com.android.vismay.newsforce.Home.TopSourcesFragments.CNNFragment"
+        android:label="CNN News"
+        tools:layout="@layout/fragment_cnn"/>
+    <fragment
+        android:id="@+id/sources_FourFourTwo"
+        android:name="com.android.vismay.newsforce.Home.TopSourcesFragments.FourFourTwoFragment"
+        android:label="Four Four Two"
+        tools:layout="@layout/fragment_four_four_two"/>
+    <fragment
+        android:id="@+id/sources_FoxNews"
+        android:name="com.android.vismay.newsforce.Home.TopSourcesFragments.FoxNewsFragment"
+        android:label="Fox News"
+        tools:layout="@layout/fragment_fox_news"/>
+    <fragment
+        android:id="@+id/sources_TheHindu"
+        android:name="com.android.vismay.newsforce.Home.TopSourcesFragments.TheHinduFragment"
+        android:label="The Hindu"
+        tools:layout="@layout/fragment_the_hindu"/>
+    <fragment
+        android:id="@+id/sources_Independent"
+        android:name="com.android.vismay.newsforce.Home.TopSourcesFragments.TheIndependentFragment"
+        android:label="The Independent"
+        tools:layout="@layout/fragment_the_independent"/>
+    <!--TopicWiseFragments-->
+    <fragment
+        android:id="@+id/nav_entertainment"
+        android:name="com.android.vismay.newsforce.Home.TopicWiseFragments.EntertainmentFragment"
+        android:label="@string/menu_entertainment"
+        tools:layout="@layout/fragment_entertainment"/>
+    <fragment
+        android:id="@+id/nav_technology"
+        android:name="com.android.vismay.newsforce.Home.TopicWiseFragments.ScienceTechFragment"
+        android:label="@string/menu_technology"
+        tools:layout="@layout/fragment_science_tech"/>
+    <fragment
+        android:id="@+id/nav_sports"
+        android:name="com.android.vismay.newsforce.Home.TopicWiseFragments.SportsFragment"
+        android:label="@string/menu_sports"
+        tools:layout="@layout/fragment_sports"/>
+    <fragment
+        android:id="@+id/nav_money_finance"
+        android:name="com.android.vismay.newsforce.Home.TopicWiseFragments.MoneyFinanceFragment"
+        android:label="@string/menu_money"
+        tools:layout="@layout/fragment_money_finance"/>
+    <fragment
+        android:id="@+id/nav_worldNews"
+        android:name="com.android.vismay.newsforce.Home.TopicWiseFragments.WorldNewsFragment"
+        android:label="@string/menu_worldnews"
+        tools:layout="@layout/fragment_world_news"/>
+    <fragment
+        android:id="@+id/nav_country"
+        android:name="com.android.vismay.newsforce.Home.TopicWiseFragments.CountryNewsFragment"
+        android:label="@string/menu_country"
+        tools:layout="@layout/fragment_country_news"/>
+    <fragment
+        android:id="@+id/nav_business"
+        android:name="com.android.vismay.newsforce.Home.TopicWiseFragments.BusinessFragment"
+        android:label="@string/menu_business"
+        tools:layout="@layout/fragment_business"/>
+    <!--OthersFramgent-->
     <fragment
         android:id="@+id/nav_about_app"
         android:name="com.android.vismay.newsforce.Home.OthersFragments.AboutFragment"
