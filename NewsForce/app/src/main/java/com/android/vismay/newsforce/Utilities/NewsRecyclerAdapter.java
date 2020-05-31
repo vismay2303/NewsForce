@@ -1,6 +1,8 @@
 package com.android.vismay.newsforce.Utilities;
 
 import android.content.Context;
+import android.content.Intent;
+import android.net.Uri;
 import android.view.ContextMenu;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -36,13 +38,21 @@ public class NewsRecyclerAdapter extends RecyclerView.Adapter<NewsRecyclerAdapte
     }
 
     @Override
-    public void onBindViewHolder(@NonNull viewHolder holder, int i) {
+    public void onBindViewHolder(@NonNull viewHolder holder, final int i) {
         if (model.getArticles().get(i).getContent() != null) {
             holder.mTitle.setText(model.getArticles().get(i).getTitle());
-            holder.mSource.setText(model.getArticles().get(i).getSource().getId());
+            holder.mSource.setText(model.getArticles().get(i).getSource().getName());
             Glide.with(context).load(model.getArticles().get(i).getUrlToImage()).into(holder.mImg);
             String timedate = format(model.getArticles().get(i).getPublishedAt());
             holder.mDatetime.setText(timedate);
+            holder.cardButton.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    String url=model.getArticles().get(i).getUrl();
+                    Intent intent =  new Intent(Intent.ACTION_VIEW, Uri.parse(url));
+                    context.startActivity(intent);
+                }
+            });
         }
     }
 

@@ -12,8 +12,9 @@
             android:layout_width="match_parent"
             android:layout_height="200dp"
             android:id="@+id/news_id_image"
-            android:layout_marginLeft="25dp"
-            android:layout_marginRight="25dp"
+            android:layout_marginLeft="16dp"
+            android:scaleType="centerCrop"
+            android:layout_marginRight="16dp"
             android:layout_marginTop="25dp"/>
         <LinearLayout
             android:layout_width="match_parent"
@@ -22,9 +23,8 @@
             android:layout_marginBottom="16dp"
             android:layout_marginLeft="16dp"
             android:layout_marginTop="-15dp"
-            android:background="@android:color/holo_blue_dark"
-            android:orientation="vertical"
-            android:elevation="60dp">
+            android:background="#025977"
+            android:orientation="vertical">
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"

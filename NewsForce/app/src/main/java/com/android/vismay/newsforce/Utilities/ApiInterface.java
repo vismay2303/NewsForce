@@ -5,8 +5,13 @@ import retrofit2.http.GET;
 import retrofit2.http.Query;
 
 public interface ApiInterface {
-    @GET("everything")
-    Call<NewsModel> getSportsNews(@Query("q") String domain,@Query("language") String lang,@Query("apiKey") String key);
+    @GET("top-headlines")
+    Call<NewsModel> getTopicWiseNews(@Query("category") String domain,@Query("country") String country,@Query("language") String lang,@Query("apiKey") String key);
 
+    @GET("top-headlines")
+    Call<NewsModel> getTopicWiseNews2(@Query("country") String country,@Query("language") String lang,@Query("apiKey") String key);
+
+    @GET("everything")
+    Call<NewsModel> getTopicWiseNews3(@Query("q") String query,@Query("language") String lang,@Query("apiKey") String key);
 
 }

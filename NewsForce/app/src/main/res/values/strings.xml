@@ -29,4 +29,5 @@
     <string name="menu_tools">Tools</string>
     <string name="menu_share">Share</string>
     <string name="menu_send">Send</string>
+    <string name="apikey">5c16d55fbe864cafa673f4937c31bc87</string>
 </resources>

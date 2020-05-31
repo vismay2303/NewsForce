@@ -80,7 +80,7 @@ public class HomeActivity extends AppCompatActivity implements NavigationView.On
         navigationView = findViewById(R.id.nav_view);
 
         mAppBarConfiguration = new AppBarConfiguration.Builder(R.id.nav_home,R.id.nav_about_app,R.id.nav_help_and_feedback,
-                R.id.nav_settings)
+                R.id.nav_settings,R.id.nav_business,R.id.nav_entertainment,R.id.nav_sports,R.id.nav_technology)
                 .setDrawerLayout(drawerLayout)
                 .build();
         navController = Navigation.findNavController(this, R.id.nav_host_fragment);
@@ -213,6 +213,21 @@ public class HomeActivity extends AppCompatActivity implements NavigationView.On
         switch(id){
             case R.id.nav_sports:
                 navController.navigate(R.id.nav_sports);
+                break;
+            case R.id.nav_business:
+                navController.navigate(R.id.nav_business);
+                break;
+            case R.id.nav_country:
+                navController.navigate(R.id.nav_country);
+                break;
+            case R.id.nav_entertainment:
+                navController.navigate(R.id.nav_entertainment);
+                break;
+            case R.id.nav_technology:
+                navController.navigate(R.id.nav_technology);
+                break;
+            case R.id.nav_worldNews:
+                navController.navigate(R.id.nav_worldNews);
                 break;
             case R.id.nav_logout:
                 logoutUser();

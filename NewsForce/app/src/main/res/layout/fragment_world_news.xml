@@ -5,10 +5,16 @@
     android:layout_height="match_parent"
     tools:context=".Home.TopicWiseFragments.WorldNewsFragment">
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
+    <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:text="@string/hello_blank_fragment" />
+        android:id="@+id/swiperefreshlayout_world">
+        <androidx.recyclerview.widget.RecyclerView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            tools:listitem="@layout/news_item_layout"
+            android:id="@+id/recyclerView_world_frag"
+            android:layout_marginTop="16dp"/>
+    </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
 
 </FrameLayout>

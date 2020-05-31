@@ -6,6 +6,7 @@ import android.os.Bundle;
 import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
+import androidx.swiperefreshlayout.widget.SwipeRefreshLayout;
 
 import android.view.LayoutInflater;
 import android.view.View;
@@ -32,6 +33,7 @@ public class SportsFragment extends Fragment {
     NewsModel model;
     ApiInterface apiInterface;
     NewsRecyclerAdapter adapter;
+    SwipeRefreshLayout swipeRefreshLayout;
     public SportsFragment() {
 
     }
@@ -46,14 +48,22 @@ public class SportsFragment extends Fragment {
         layoutManager = new LinearLayoutManager(getContext());
         recyclerView.setLayoutManager(layoutManager);
         recyclerView.setHasFixedSize(true);
+        swipeRefreshLayout=rootView.findViewById(R.id.swiperefreshlayout_sports);
+        swipeRefreshLayout.setOnRefreshListener(new SwipeRefreshLayout.OnRefreshListener() {
+            @Override
+            public void onRefresh() {
+                fetchInformation("https://newsapi.org/v2/","en",getResources().getString(R.string.apikey));
+                swipeRefreshLayout.setRefreshing(false);
+            }
+        });
         String url="https://newsapi.org/v2/";
-        fetchInformation(url,"en","5c16d55fbe864cafa673f4937c31bc87");
+        fetchInformation(url,"en",getResources().getString(R.string.apikey));
         return rootView;
     }
 
     private void fetchInformation(String url, String en, String s) {
         apiInterface= ApiClient.getApiClient(url).create(ApiInterface.class);
-        Call<NewsModel> call=apiInterface.getSportsNews("sports","en","5c16d55fbe864cafa673f4937c31bc87");
+        Call<NewsModel> call=apiInterface.getTopicWiseNews("sports","in","en","5c16d55fbe864cafa673f4937c31bc87");
         call.enqueue(new Callback<NewsModel>() {
             @Override
             public void onResponse(Call<NewsModel> call, Response<NewsModel> response) {
