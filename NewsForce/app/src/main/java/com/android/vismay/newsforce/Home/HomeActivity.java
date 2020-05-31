@@ -1,6 +1,8 @@
 package com.android.vismay.newsforce.Home;
 
+import android.content.ClipData;
 import android.content.Intent;
+import android.graphics.BlendMode;
 import android.net.Uri;
 import android.os.Bundle;
 
@@ -95,6 +97,7 @@ public class HomeActivity extends AppCompatActivity implements NavigationView.On
         img=header.findViewById(R.id.NavHeaderImg);
         name=header.findViewById(R.id.NavHeaderName);
         email=header.findViewById(R.id.NavHeaderEmail);
+
 
         addData();
     }
@@ -208,6 +211,9 @@ public class HomeActivity extends AppCompatActivity implements NavigationView.On
         drawerLayout.closeDrawers();
         int id=item.getItemId();
         switch(id){
+            case R.id.nav_sports:
+                navController.navigate(R.id.nav_sports);
+                break;
             case R.id.nav_logout:
                 logoutUser();
                 break;
@@ -223,4 +229,5 @@ public class HomeActivity extends AppCompatActivity implements NavigationView.On
         }
         return true;
     }
+
 }

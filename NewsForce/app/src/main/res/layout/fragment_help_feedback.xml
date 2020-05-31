@@ -4,10 +4,171 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".Home.OthersFragments.HelpFeedbackFragment">
-
-    <TextView
+    <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="@string/hello_blank_fragment" />
+        android:layout_height="match_parent">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_margin="16dp">
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="1. On a scale of 1-5, how much overall are you satisfied with the app?"
+                android:id="@+id/question1"
+                style="@style/question_design"/>
+            <RatingBar
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:rating="0"
+                android:numStars="5"
+                android:id="@+id/rating_q1"
+                android:progressTint="@color/lightblue"
+                android:layout_gravity="center_horizontal"/>
 
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="2. On a scale of 1-5, how much do like the design and animation of the app?"
+                android:id="@+id/question2"
+                style="@style/question_design"/>
+            <RatingBar
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:rating="0"
+                android:numStars="5"
+                android:id="@+id/rating_q2"
+                android:progressTint="@color/lightblue"
+                android:layout_gravity="center_horizontal"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="3. On a scale of 1-5, how likely is it that you would recommend this app to your friends?"
+                android:id="@+id/question3"
+                style="@style/question_design"/>
+            <RatingBar
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:rating="0"
+                android:numStars="5"
+                android:id="@+id/rating_q3"
+                android:progressTint="@color/lightblue"
+                android:layout_gravity="center_horizontal"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="4. In what situations do you think our app is most useful?"
+                android:id="@+id/question4"
+                style="@style/question_design"/>
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Please Mention Here..."
+                android:id="@+id/edittext_q4"
+                android:backgroundTint="@color/lightblue"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="5. What areas or domains do you think our app should focus on more?"
+                android:id="@+id/question5"
+                style="@style/question_design"/>
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Please Mention Here..."
+                android:id="@+id/edittext_q5"
+                android:backgroundTint="@color/lightblue"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="6. What other apps similar to ours do you use?"
+                android:id="@+id/question6"
+                style="@style/question_design"/>
+            <CheckBox
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/inShorts_q6"
+                android:text="InShorts"/>
+            <CheckBox
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/toi_q6"
+                android:text="TOI"/>
+            <CheckBox
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/gnews_q6"
+                android:text="Google News"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="7. On an average, how much time do you spend on our app daily?"
+                android:id="@+id/question7"
+                style="@style/question_design"/>
+            <RadioGroup
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/radio_group_q7">
+                <RadioButton
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="&lt; 30 minutes"
+                    android:id="@+id/halfhour_q9"/>
+                <RadioButton
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="30 minutes to 1 hour"
+                    android:id="@+id/onehour_q9"/>
+                <RadioButton
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="1 hour to 2 hours"
+                    android:id="@+id/twohour_q9"/>
+                <RadioButton
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="&gt; 2 hours"
+                    android:id="@+id/morethantwo_q9"/>
+            </RadioGroup>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="8. Would you like a reaction feature? Or you prefer the way as it is right now?"
+                android:id="@+id/question8"
+                style="@style/question_design"/>
+            <RadioGroup
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/radio_group_q8">
+                <RadioButton
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="YES"
+                    android:id="@+id/yes_q8"/>
+                <RadioButton
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="NO"
+                    android:id="@+id/no_q8"/>
+            </RadioGroup>
+
+            <Button
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="30dp"
+                android:text="SUBMIT"
+                android:textSize="20dp"
+                android:textColor="@android:color/white"
+                android:id="@+id/submit_feedback"
+                android:background="@drawable/custom_button_login"/>
+        </LinearLayout>
+    </ScrollView>
 </FrameLayout>
