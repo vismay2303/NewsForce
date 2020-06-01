@@ -46,11 +46,11 @@ public class WorldNewsFragment extends Fragment {
         View rootView = inflater.inflate(R.layout.fragment_world_news, container, false);
 
 
-        recyclerView = rootView.findViewById(R.id.recyclerView_sports_frag);
+        recyclerView = rootView.findViewById(R.id.recyclerView_world_frag);
         layoutManager = new LinearLayoutManager(getContext());
         recyclerView.setLayoutManager(layoutManager);
         recyclerView.setHasFixedSize(true);
-        swipeRefreshLayout=rootView.findViewById(R.id.swiperefreshlayout_sports);
+        swipeRefreshLayout=rootView.findViewById(R.id.swiperefreshlayout_world);
         swipeRefreshLayout.setOnRefreshListener(new SwipeRefreshLayout.OnRefreshListener() {
             @Override
             public void onRefresh() {

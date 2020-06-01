@@ -8,6 +8,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
+import android.widget.SimpleAdapter;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
@@ -16,6 +17,10 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.android.vismay.newsforce.R;
 import com.bumptech.glide.Glide;
+
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 
 public class NewsRecyclerAdapter extends RecyclerView.Adapter<NewsRecyclerAdapter.viewHolder> {
 
@@ -43,7 +48,12 @@ public class NewsRecyclerAdapter extends RecyclerView.Adapter<NewsRecyclerAdapte
             holder.mTitle.setText(model.getArticles().get(i).getTitle());
             holder.mSource.setText(model.getArticles().get(i).getSource().getName());
             Glide.with(context).load(model.getArticles().get(i).getUrlToImage()).into(holder.mImg);
-            String timedate = format(model.getArticles().get(i).getPublishedAt());
+            String timedate = null;
+            try {
+                timedate = format(model.getArticles().get(i).getPublishedAt());
+            } catch (ParseException e) {
+                e.printStackTrace();
+            }
             holder.mDatetime.setText(timedate);
             holder.cardButton.setOnClickListener(new View.OnClickListener() {
                 @Override
@@ -77,10 +87,13 @@ public class NewsRecyclerAdapter extends RecyclerView.Adapter<NewsRecyclerAdapte
         }
     }
 
-    public String format(String date){
+    public String format(String date) throws ParseException {
+        SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss'Z'");
+        Date date1 = sdf.parse(date);
+        SimpleDateFormat sdfreq = new SimpleDateFormat("hh:mm a, MMM dd, yyyy");
+        String formattedDate = sdfreq.format(date1);
         //2019-06-25T15:55:22Z
-        date=date.replace("T"," ");
-        date=date.substring(0,16);
-        return date;
+
+        return formattedDate;
     }
 }

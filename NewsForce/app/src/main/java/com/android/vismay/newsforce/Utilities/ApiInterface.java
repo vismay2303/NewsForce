@@ -14,4 +14,6 @@ public interface ApiInterface {
     @GET("everything")
     Call<NewsModel> getTopicWiseNews3(@Query("q") String query,@Query("language") String lang,@Query("apiKey") String key);
 
+    @GET("top-headlines")
+    Call<NewsModel> getSourceWiseNews(@Query("sources") String sourceName,@Query("language") String lang,@Query("apiKey") String key);
 }

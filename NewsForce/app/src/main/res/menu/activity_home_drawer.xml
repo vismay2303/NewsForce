@@ -54,8 +54,8 @@
                 android:id="@+id/sources_TheHindu"
                 android:title="The Hindu"/>
             <item
-                android:id="@+id/sources_CNBC"
-                android:title="CNBC"/>
+                android:id="@+id/sources_TOI"
+                android:title="Times of India"/>
             <item
                 android:id="@+id/sources_CNN"
                 android:title="CNN" />

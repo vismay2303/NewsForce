@@ -80,7 +80,8 @@ public class HomeActivity extends AppCompatActivity implements NavigationView.On
         navigationView = findViewById(R.id.nav_view);
 
         mAppBarConfiguration = new AppBarConfiguration.Builder(R.id.nav_home,R.id.nav_about_app,R.id.nav_help_and_feedback,
-                R.id.nav_settings,R.id.nav_business,R.id.nav_entertainment,R.id.nav_sports,R.id.nav_technology)
+                R.id.nav_settings,R.id.nav_business,R.id.nav_entertainment,R.id.nav_sports,R.id.nav_technology,R.id.nav_country,R.id.nav_worldNews,
+                R.id.sources_BBC,R.id.sources_CNN,R.id.sources_FourFourTwo,R.id.sources_FoxNews,R.id.sources_Independent,R.id.sources_TheHindu,R.id.sources_TOI)
                 .setDrawerLayout(drawerLayout)
                 .build();
         navController = Navigation.findNavController(this, R.id.nav_host_fragment);
@@ -228,6 +229,27 @@ public class HomeActivity extends AppCompatActivity implements NavigationView.On
                 break;
             case R.id.nav_worldNews:
                 navController.navigate(R.id.nav_worldNews);
+                break;
+            case R.id.sources_BBC:
+                navController.navigate(R.id.sources_BBC);
+                break;
+            case R.id.sources_CNN:
+                navController.navigate(R.id.sources_CNN);
+                break;
+            case R.id.sources_FourFourTwo:
+                navController.navigate(R.id.sources_FourFourTwo);
+                break;
+            case R.id.sources_FoxNews:
+                navController.navigate(R.id.sources_FoxNews);
+                break;
+            case R.id.sources_Independent:
+                navController.navigate(R.id.sources_Independent);
+                break;
+            case R.id.sources_TheHindu:
+                navController.navigate(R.id.sources_TheHindu);
+                break;
+            case R.id.sources_TOI:
+                navController.navigate(R.id.sources_TOI);
                 break;
             case R.id.nav_logout:
                 logoutUser();

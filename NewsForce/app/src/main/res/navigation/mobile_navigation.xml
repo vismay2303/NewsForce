@@ -27,9 +27,9 @@
         android:label="BBC News"
         tools:layout="@layout/fragment_bbcnews"/>
     <fragment
-        android:id="@+id/sources_CNBC"
-        android:name="com.android.vismay.newsforce.Home.TopSourcesFragments.CNBCFragment"
-        android:label="CNBC News"
+        android:id="@+id/sources_TOI"
+        android:name="com.android.vismay.newsforce.Home.TopSourcesFragments.TOIFragment"
+        android:label="Times of India"
         tools:layout="@layout/fragment_cnbc"/>
     <fragment
         android:id="@+id/sources_CNN"

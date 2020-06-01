@@ -53,7 +53,7 @@
                 android:textSize="20sp"
                 android:textAlignment="viewStart"
                 android:justificationMode="inter_word"
-                android:text="> The Times of India live news app offers everything that an avid news reader is looking for – breaking news, latest headlines, trending stories and in-depth coverage of sports, cricket, entertainment, business, technology, politics &amp; more! \n\n> From India news to world news, politics to cricket news, technology news to Bollywood news and movie reviews of Bollywood, Hollywood and regional films – get the most relevant coverage of celebrity news.\n\n> The app can set up a daily briefing to give you the most important stories of the day, or you can tap Full Coverage to get everything.\n"
+                android:text="> The Newsforce app aims to bring the best news experience on smartphones.\n\n> The content ranges from brief news headlines to in-depth detailed analysis of controversial hot topics.\n\n> The news content is sourced from most trusted and popular broadcasting corporations like BBC News, Fox News, CNN, etc.\n\n> Anything from politics to technology, our app covers all the domains.\n\n> We also provide suggestions, based on your favourite topics and areas.\n\n> Our app educates, informs and entertains."
                 />
         </LinearLayout>
     </ScrollView>

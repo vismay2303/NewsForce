@@ -15,12 +15,11 @@
             android:layout_marginLeft="16dp"
             android:scaleType="centerCrop"
             android:layout_marginRight="16dp"
-            android:layout_marginTop="25dp"/>
+            android:layout_marginTop="20dp"/>
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginRight="16dp"
-            android:layout_marginBottom="16dp"
             android:layout_marginLeft="16dp"
             android:layout_marginTop="-15dp"
             android:background="#025977"
@@ -53,7 +52,7 @@
                     android:layout_height="wrap_content"
                     android:layout_weight="2"
                     android:text="8:31PM May 31, 2020"
-                    android:gravity="center_horizontal"
+                    android:gravity="right"
                     android:id="@+id/date_time_news_id"
                     android:layout_marginRight="16dp"
                     android:textColor="@android:color/white"/>

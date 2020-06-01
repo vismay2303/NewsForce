@@ -25,7 +25,7 @@ import retrofit2.Response;
 /**
  * A simple {@link Fragment} subclass.
  */
-public class FourFourTwoFragment extends Fragment {
+public class TOIFragment extends Fragment {
 
     RecyclerView recyclerView;
     RecyclerView.LayoutManager layoutManager;
@@ -34,7 +34,7 @@ public class FourFourTwoFragment extends Fragment {
     NewsRecyclerAdapter adapter;
     SwipeRefreshLayout swipeRefreshLayout;
 
-    public FourFourTwoFragment() {
+    public TOIFragment() {
         // Required empty public constructor
     }
 
@@ -43,12 +43,12 @@ public class FourFourTwoFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        View rootView = inflater.inflate(R.layout.fragment_four_four_two, container, false);
-        recyclerView = rootView.findViewById(R.id.recyclerView_442_frag);
+        View rootView = inflater.inflate(R.layout.fragment_cnbc, container, false);
+        recyclerView = rootView.findViewById(R.id.recyclerView_toi_frag);
         layoutManager = new LinearLayoutManager(getContext());
         recyclerView.setLayoutManager(layoutManager);
         recyclerView.setHasFixedSize(true);
-        swipeRefreshLayout=rootView.findViewById(R.id.swiperefreshlayout_442);
+        swipeRefreshLayout=rootView.findViewById(R.id.swiperefreshlayout_toi);
         swipeRefreshLayout.setOnRefreshListener(new SwipeRefreshLayout.OnRefreshListener() {
             @Override
             public void onRefresh() {
@@ -63,7 +63,7 @@ public class FourFourTwoFragment extends Fragment {
 
     private void fetchInformation(String url, String en, String s) {
         apiInterface= ApiClient.getApiClient(url).create(ApiInterface.class);
-        Call<NewsModel> call=apiInterface.getSourceWiseNews("four-four-two","en","5c16d55fbe864cafa673f4937c31bc87");
+        Call<NewsModel> call=apiInterface.getSourceWiseNews("cnn","en","5c16d55fbe864cafa673f4937c31bc87");
         call.enqueue(new Callback<NewsModel>() {
             @Override
             public void onResponse(Call<NewsModel> call, Response<NewsModel> response) {
@@ -89,5 +89,4 @@ public class FourFourTwoFragment extends Fragment {
             }
         });
     }
-
 }
