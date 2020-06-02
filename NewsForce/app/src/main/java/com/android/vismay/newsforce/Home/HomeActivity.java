@@ -19,6 +19,9 @@ import com.google.android.gms.tasks.Task;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.android.material.snackbar.Snackbar;
 
+import android.speech.RecognitionListener;
+import android.speech.RecognizerIntent;
+import android.speech.SpeechRecognizer;
 import android.util.Log;
 import android.view.MenuItem;
 import android.view.View;
@@ -46,9 +49,12 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 
 import android.view.Menu;
+import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
+
+import java.util.List;
 
 public class HomeActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener{
 
@@ -61,13 +67,19 @@ public class HomeActivity extends AppCompatActivity implements NavigationView.On
     DrawerLayout drawerLayout;
     NavController navController;
     NavigationView navigationView;
-
+    ImageButton mic;
+    private SpeechRecognizer speechRecognizer;
+    private FragmentRefreshListener fragmentRefreshListener;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home);
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
+
+        initSpeechRecogn();
+        mic=findViewById(R.id.mic_homepage);
+
         FloatingActionButton fab = findViewById(R.id.fab);
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -90,7 +102,16 @@ public class HomeActivity extends AppCompatActivity implements NavigationView.On
         navigationView.setNavigationItemSelectedListener(this);
 
 
-
+        mic.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent=new Intent(RecognizerIntent.ACTION_RECOGNIZE_SPEECH);
+                intent.putExtra(RecognizerIntent.EXTRA_LANGUAGE_MODEL, RecognizerIntent.LANGUAGE_MODEL_FREE_FORM);
+                intent.putExtra(RecognizerIntent.EXTRA_MAX_RESULTS, 1);
+                speechRecognizer.startListening(intent);
+                Toast.makeText(HomeActivity.this, "Pls Speak", Toast.LENGTH_SHORT).show();
+            }
+        });
 
         Log.e("Key", getIntent().getStringExtra("Key").toString());
 
@@ -110,7 +131,6 @@ public class HomeActivity extends AppCompatActivity implements NavigationView.On
             super.onBackPressed();
         }
     }
-
     private void logoutUser() {
         if(getIntent().getStringExtra("Key").toString().compareTo("Google")==0){
             GoogleSignInOptions gso = new GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)
@@ -138,7 +158,6 @@ public class HomeActivity extends AppCompatActivity implements NavigationView.On
         startActivity(new Intent(HomeActivity.this,LoginActivity.class));
         finish();
     }
-
     private void addData() {
         if(getIntent().getStringExtra("Key").toString().compareTo("Google")==0){
             addDataGoogle();
@@ -147,7 +166,6 @@ public class HomeActivity extends AppCompatActivity implements NavigationView.On
             addDataFirebase();
         }
     }
-
     private void addDataGoogle() {
         GoogleSignInOptions gso = new GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)
                     .requestEmail()
@@ -167,7 +185,6 @@ public class HomeActivity extends AppCompatActivity implements NavigationView.On
             Glide.with(this).load(String.valueOf(personPhoto)).into(img);
         }
     }
-
     private void addDataFirebase() {
         firebaseAuth=FirebaseAuth.getInstance();
         mDatabase= FirebaseDatabase.getInstance().getReference();
@@ -191,21 +208,17 @@ public class HomeActivity extends AppCompatActivity implements NavigationView.On
         });
 
     }
-
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         getMenuInflater().inflate(R.menu.home, menu);
         return true;
     }
-
     @Override
     public boolean onSupportNavigateUp() {
         NavController navController = Navigation.findNavController(this, R.id.nav_host_fragment);
         return NavigationUI.navigateUp(navController, mAppBarConfiguration)
                 || super.onSupportNavigateUp();
     }
-
-
     @Override
     public boolean onNavigationItemSelected(@NonNull MenuItem item) {
         item.setChecked(true);
@@ -266,5 +279,77 @@ public class HomeActivity extends AppCompatActivity implements NavigationView.On
         }
         return true;
     }
+    private void initSpeechRecogn() {
+        if(SpeechRecognizer.isRecognitionAvailable(this)){
+            speechRecognizer=SpeechRecognizer.createSpeechRecognizer(this);
+            speechRecognizer.setRecognitionListener(new RecognitionListener() {
+                @Override
+                public void onReadyForSpeech(Bundle params) {
 
+                }
+
+                @Override
+                public void onBeginningOfSpeech() {
+
+                }
+
+                @Override
+                public void onRmsChanged(float rmsdB) {
+
+                }
+
+                @Override
+                public void onBufferReceived(byte[] buffer) {
+
+                }
+
+                @Override
+                public void onEndOfSpeech() {
+
+                }
+
+                @Override
+                public void onError(int error) {
+
+                }
+
+                @Override
+                public void onResults(Bundle results) {
+                    List<String> res=results.getStringArrayList(SpeechRecognizer.RESULTS_RECOGNITION);
+                    processResult(res.get(0));
+                    if(getFragmentRefreshListener()!=null){
+                        Log.e("Reached", "1");
+                        getFragmentRefreshListener().onRefresh(res.get(0));
+
+                    }
+
+                }
+
+                @Override
+                public void onPartialResults(Bundle partialResults) {
+
+                }
+
+                @Override
+                public void onEvent(int eventType, Bundle params) {
+
+                }
+            });
+        }
+        else{
+            Toast.makeText(this, "Text Recognition Not Available", Toast.LENGTH_SHORT).show();
+        }
+    }
+    public void processResult(String command){
+        Toast.makeText(HomeActivity.this, command, Toast.LENGTH_SHORT).show();
+    }
+    public FragmentRefreshListener getFragmentRefreshListener() {
+        return fragmentRefreshListener;
+    }
+    public void setFragmentRefreshListener(FragmentRefreshListener fragmentRefreshListener) {
+        this.fragmentRefreshListener = fragmentRefreshListener;
+    }
+    public interface FragmentRefreshListener{
+        void onRefresh(String s);
+    }
 }
